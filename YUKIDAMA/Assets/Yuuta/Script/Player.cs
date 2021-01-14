@@ -22,13 +22,13 @@ public class Player : MonoBehaviour
 #endif
         gameObject.transform.localScale =new Vector3(hp,hp,hp);//hpに基づくscaleの計算
 
-        if (transform.localScale.x<=0)
+        if (transform.localScale.x<=0.5f)
         {
             transform.localScale = new Vector3(0, 0, 0);
+            Destroy(gameObject);
         }
 
-        gameObject.GetComponent<Rigidbody>().mass = hp*3;
-
+        gameObject.GetComponent<Rigidbody>().mass = hp*1.5f;
         Debug.Log(!gameObject.GetComponent<Rigidbody>().IsSleeping());
     }//Update
 }

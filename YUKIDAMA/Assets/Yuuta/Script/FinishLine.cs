@@ -21,17 +21,17 @@ public class FinishLine : MonoBehaviour
     {
         //-----ゴールまでの距離を表示する-----
         playerPos = GameObject.Find("Player").transform.position;
-        text.text = "残り"+ ((int)pos.z - (int)playerPos.z).ToString()+"m";
+        text.text = ((int)pos.z - (int)playerPos.z).ToString();
 
         if (pos.z-playerPos.z<0)
         {
-            text.text = "ゴール";
+            text.text = "0";
         }
         else
         {
             //-----タイマーを表示する-----
             timer += Time.deltaTime;
-            timerText.text = timer.ToString("f2")+"秒" ;
+            timerText.text = timer.ToString("f2");
         }
     }
 }
